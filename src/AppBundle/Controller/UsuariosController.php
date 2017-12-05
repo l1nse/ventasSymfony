@@ -10,7 +10,7 @@ use AppBundle\Entity\Usuarios;
 class UsuariosController extends Controller
 {
 	/**
-     * @Route("/insert/usuario", name="insert_post")
+     * @Route("/insert/usuario", name="insert_usuario")
      */
 
 	Public function insertPost()
@@ -20,6 +20,8 @@ class UsuariosController extends Controller
 		$usuario->setApellidos('Apellido1');
 		$usuario->setTelefono('56987645261');
 		$usuario->setEdad('23');
+		$usuario->setSexo('M');
+		$usuario->setProfesion('Ingeniebrio');
 
 		$em = $this->getDoctrine()->getManager();
 
