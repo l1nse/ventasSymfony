@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+  <entity name="Usuarios" table="usuarios">
+    <id name="id" type="integer" column="id">
+      <generator strategy="IDENTITY"/>
+    </id>
+    <field name="nombre" type="string" column="nombre" length="50" nullable="false">
+      <options>
+        <option name="fixed"/>
+        <option name="comment">nombre cliente</option>
+      </options>
+    </field>
+    <field name="apellidos" type="string" column="apellidos" length="100" nullable="false">
+      <options>
+        <option name="fixed"/>
+        <option name="comment">Apellidos cliente</option>
+      </options>
+    </field>
+    <field name="telefono" type="integer" column="telefono" nullable="false">
+      <options>
+        <option name="unsigned"/>
+        <option name="comment">móvil</option>
+      </options>
+    </field>
+    <field name="edad" type="integer" column="edad" nullable="true">
+      <options>
+        <option name="unsigned"/>
+      </options>
+    </field>
+    <field name="sexo" type="string" column="sexo" length="1" nullable="true">
+      <options>
+        <option name="fixed">1</option>
+      </options>
+    </field>
+    <field name="profesion" type="text" column="profesion" length="65535" nullable="true">
+      <options>
+        <option name="fixed"/>
+      </options>
+    </field>
+  </entity>
+</doctrine-mapping>

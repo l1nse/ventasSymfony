@@ -1,0 +1,46 @@
+<?php
+
+namespace AppBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * DetalleBoleta
+ *
+ * @ORM\Table(name="detalle_boleta", indexes={@ORM\Index(name="id_boleta", columns={"id_boleta"}), @ORM\Index(name="id_producto", columns={"id_producto"})})
+ * @ORM\Entity
+ */
+class DetalleBoleta
+{
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="id", type="integer", nullable=false)
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
+     */
+    private $id;
+
+    /**
+     * @var \Boleta
+     *
+     * @ORM\ManyToOne(targetEntity="Boleta")
+     * @ORM\JoinColumns({
+     *   @ORM\JoinColumn(name="id_boleta", referencedColumnName="id")
+     * })
+     */
+    private $idBoleta;
+
+    /**
+     * @var \Producto
+     *
+     * @ORM\ManyToOne(targetEntity="Producto")
+     * @ORM\JoinColumns({
+     *   @ORM\JoinColumn(name="id_producto", referencedColumnName="id")
+     * })
+     */
+    private $idProducto;
+
+
+}
+
