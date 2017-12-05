@@ -1,31 +1,39 @@
 {% extends 'base.html.twig' %}
 {% block body %}
-<div class="col-sm-8 blog-main">      
 
-    
+<h1> Usuarios </h1>
 
-    
-    <div class="blog-post">
-        <h2 class="blog-post-title"></h2>
-        <p class="blog-post-meta"> by Usuarios <a href="#"></a></p>
+<div>
+    <table class="table table-striped">
+        <thead>
+          <tr>
+            <th>id</th>
+            <th>Nombre</th>
+            <th>Apellido</th>
+            <th>Telefono</th>
+            <th>Edad</th>
+            <th>Sexo</th>
+            <th>Profesion</th>
+            <th>Acciones</th>
 
-        <p>This blog post shows a few different types of content that's supported and styled with Bootstrap. Basic typography, images, and code are all supported.....
-            <!-- Genera Url relativa-->        
-            
-        </p>
-        <hr>
-        <a href="{{ path('insert_usuario') }}" class="btn btn-primary btn-lg active" role="button" aria-pressed="true">Agregar usuario</a
-
-    </div><!-- /.blog-post 1-->
-
-    
-    
-    <nav>
-        <ul class="pager">
-            <li><a href="#">Previous</a></li>
-            <li><a href="#">Next</a></li>
-        </ul>
-    </nav>
-
-</div><!-- /.blog-main -->
+          </tr>
+        </thead>
+        <tbody>
+            {% for usuarios in usuarios%}
+              <tr>
+                    <td>{{usuarios.id}}</td>
+                    <td>{{usuarios.nombre}}</td>
+                    <td>{{usuarios.apellidos}}</td>
+                    <td>{{usuarios.telefono}}</td>
+                    <td>{{usuarios.edad}}</td>
+                    <td>{{usuarios.Sexo}}</td>
+                    <td>{{usuarios.Profesion}}</td>
+                    <td>{{usuarios.Profesion}}</td>
+                    <td><a href="{{ path('edit_usuario',{'id': usuarios.id}) }}" class="btn btn-info " role="button">Link Button</a></td>
+                  </tr>
+        
+            {%endfor%}
+        </tbody>
+    </table>
+        </div>
 {% endblock %}

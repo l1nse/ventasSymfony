@@ -43,11 +43,7 @@ class DefaultController extends Controller
     public function nuevoAction(Request $request)
     {
         
-        $usuario = new Usuarios();
-        $form = $this->createForm(UsuariosType::class);
         
-        return $this->render('AppBundle:usuarios:agregar_usuarios.html.twig',array("form"=>$form->createView() ));
-        //return $this->render('AppBundle:usuarios:agregar_usuarios.html.twig');
         
     }
 
